@@ -32,16 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // footer
-    fetch("footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-            const footerPlaceholder = document.getElementById("footer-placeholder");
-            if (footerPlaceholder) {
-                footerPlaceholder.innerHTML = data;
-            }
-        })
-        .catch((error) => console.error("Error load footer:", error));
-
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+  
     // Paging
     const productsPerPage = 8;
     const products = document.querySelectorAll(".container.page-wrapper");
